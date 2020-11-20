@@ -25,4 +25,5 @@ ENV ARGS=
 CMD exec go-shadowsocks2 \
 	-s "ss://${METHOD}:${PASSWORD}@:${SERVER_PORT}" \
 	-verbose \
-	${ARGS}
+	--plugin v2ray-plugin --plugin-opts "server;tls;host=${ARGS};cert=/home/cert/${ARGS}.crt;key=/home/cert/${ARGS}.key"
+	
